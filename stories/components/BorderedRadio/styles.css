@@ -1,0 +1,44 @@
+.bordered-radio {
+  --size: 20px;
+
+  display: inline-flex;
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid #bfbfc0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: border-width 0.15s linear;
+}
+
+/*
+  input лежит поверх отрисовываемой радиокнопки. Из-за этого она не взаимодействует с курсором.
+  По этому стилизация hover, focus, active радиокнопки делается через псевдоклассы input
+*/
+
+.e-radio__input:hover + .bordered-radio {
+  border-color: #999;
+}
+
+.e-radio__input:disabled + .bordered-radio {
+  background-color: #ebebeb;
+}
+
+.e-radio__input:checked + .bordered-radio {
+  border-width: 6px;
+}
+
+.e-radio__input:enabled:checked + .bordered-radio {
+  border-color: #0060df;
+}
+
+.e-radio__input:enabled:checked:hover + .bordered-radio {
+  border-color: #004fc4;
+}
+
+.e-radio__input:focus + .bordered-radio {
+  box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.e-radio__input:checked:focus + .bordered-radio {
+  box-shadow: 0 0 1px 3px rgba(13, 110, 253, 0.25);
+}

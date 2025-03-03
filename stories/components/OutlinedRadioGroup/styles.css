@@ -1,0 +1,55 @@
+.outlined-group {
+  --radius: 8px;
+  --selected: #0075ff;
+  --width: 1px;
+
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.outlined-group__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  padding: 10px 20px;
+  border: var(--width) solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+/* Радиусы */
+
+.outlined-group__item:first-child {
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.outlined-group__item:last-child {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.outlined-group__item:hover {
+  color: var(--selected);
+}
+
+.outlined-group__item--checked {
+  color: var(--selected);
+  border-color: var(--selected);
+  /* Поднимаем элемент, чтобы он был выше чем правый сосед (для отображения правой границы) */
+  z-index: 1;
+}
+
+/* Смещаем каждый элемент влево (кроме первого), чтобы устранить двойные границы элементов */
+.outlined-group__item:not(.outlined-group__item:first-child) {
+  margin-left: calc(var(--width) * -1);
+}
+
+/* input растягивается на весь элемент */
+.outlined-group__item .e-radio__box {
+  position: static;
+  margin: 0;
+}

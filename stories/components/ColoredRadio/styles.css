@@ -1,0 +1,19 @@
+/* Постоянный цвет радиокнопки */
+
+.e-radio__box.e-radio__box--red {
+  color: red;
+}
+
+.e-radio__box.e-radio__box--orange {
+  color: orange;
+}
+
+/* Цвет радиокнопки изменяется только для отмеченного состояния */
+
+.e-radio:has(.e-radio__input:checked) .e-radio__box--green {
+  color: green;
+}
+
+.e-radio:has(.e-radio__input:checked) .e-radio__box--purple {
+  color: purple;
+}

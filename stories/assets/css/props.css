@@ -1,0 +1,17 @@
+.color-red {
+  color: red;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.gradient-text {
+  color: transparent;
+  background: linear-gradient(to right, red, blue);
+  background-clip: text;
+}
+
+.d-flex {
+  display: flex;
+}

@@ -1,0 +1,40 @@
+.filled-group {
+  display: inline-flex;
+  gap: 6px;
+  min-height: 36px;
+  padding: 4px;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  list-style: none;
+}
+
+.filled-group__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  padding: 0 12px;
+  color: #555;
+  border-radius: 8px;
+}
+
+.filled-group__item:not(.filled-group__item--checked):hover {
+  color: #111;
+}
+
+.filled-group__item:not(.filled-group__item--checked):active {
+  background-color: #e3eaf2;
+}
+
+.filled-group__item--checked {
+  color: #111;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgb(0, 0, 0, 0.15);
+}
+
+/* input растягивается на весь элемент */
+.filled-group__item .e-radio__box {
+  position: static;
+  margin: 0;
+}

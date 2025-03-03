@@ -1,0 +1,22 @@
+.icon-radio {
+  --selected: #1e88e5;
+
+  display: inline-flex;
+  padding: 12px;
+  fill: var(--selected);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon-radio--disabled {
+  fill: #90caf9;
+}
+
+.icon-radio--checked {
+  fill: #fff;
+  background-color: var(--selected);
+}
+
+.e-radio__input:hover + .icon-radio:not(.icon-radio--disabled):not(.icon-radio--checked) {
+  background-color: #e3f2fd;
+}

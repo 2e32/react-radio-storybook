@@ -1,0 +1,56 @@
+/* Фон */
+.filled-radio {
+  --box-size: 24px;
+  --mark-size: calc(var(--box-size) / 2);
+
+  display: inline-block;
+  position: relative;
+  width: var(--box-size);
+  height: var(--box-size);
+  background-color: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.filled-radio:hover {
+  background-color: #43a047;
+}
+
+/* Метка */
+.filled-radio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--mark-size);
+  height: var(--mark-size);
+  background-color: #fff;
+  border-radius: 50%;
+  translate: -50% -50%;
+  transform: scale(0);
+  box-shadow:
+    0 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+input[type='radio']:checked + .filled-radio::before {
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+
+/* Эффект нажатия (ripple) */
+.filled-radio::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+input[type='radio']:checked + .filled-radio::after {
+  background-color: transparent;
+  transform: scale(1);
+  transition: all 0.5s;
+}

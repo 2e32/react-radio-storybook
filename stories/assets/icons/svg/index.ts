@@ -1,0 +1,16 @@
+export { ReactComponent as Angular } from './angular.svg';
+export { ReactComponent as BacteriaOutline } from './bacteria-outline.svg';
+export { ReactComponent as Bike } from './bike.svg';
+export { ReactComponent as Bus } from './bus.svg';
+export { ReactComponent as Car } from './car.svg';
+export { ReactComponent as Check } from './check.svg';
+export { ReactComponent as CheckboxBlank } from './checkbox-blank.svg';
+export { ReactComponent as CheckboxMarked } from './checkbox-marked.svg';
+export { ReactComponent as React } from './react.svg';
+export { ReactComponent as Train } from './train.svg';
+export { ReactComponent as VirusOutline } from './virus-outline.svg';
+export { ReactComponent as VolumeHigh } from './volume-high.svg';
+export { ReactComponent as VolumeMedium } from './volume-medium.svg';
+export { ReactComponent as VolumeMute } from './volume-mute.svg';
+export { ReactComponent as Vue } from './vue.svg';
+export { ReactComponent as Walk } from './walk.svg';

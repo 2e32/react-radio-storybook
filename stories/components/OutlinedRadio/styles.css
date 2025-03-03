@@ -1,0 +1,38 @@
+.outlined-radio {
+  /* Длина окружности вычисляется по формуле C=2πr (2 * 3,14 * 10) или с помощью getTotalLength() */
+  --length: 62.8;
+  --selected: #008fff;
+  --border-duration: 0.3s;
+}
+
+.outlined-radio__border {
+  stroke: #c8ccd4;
+}
+
+.outlined-radio__selection {
+  stroke: var(--selected);
+  stroke-dasharray: 0 var(--length);
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.outlined-radio__mark {
+  scale: 0;
+  fill: var(--selected);
+  transform-origin: center;
+}
+
+@keyframes progress {
+  to {
+    stroke-dasharray: var(--length) 0;
+  }
+}
+
+.outlined-radio--selected > .outlined-radio__selection {
+  animation: progress var(--border-duration) forwards;
+}
+
+.outlined-radio--selected > .outlined-radio__mark {
+  scale: 1;
+  transition: scale 0.2s ease var(--border-duration);
+}

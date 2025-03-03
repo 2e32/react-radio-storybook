@@ -1,0 +1,54 @@
+.list {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  padding: 16px 12px;
+  color: #444;
+  border: 1px solid #cdd7e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.list-item--checked {
+  border-color: #1976d2;
+}
+
+.list-item--disabled {
+  color: #999;
+}
+
+.list-item__icon,
+.list-item__label,
+.list-item__radio {
+  display: inline-flex;
+  align-items: center;
+}
+
+.list-item__label {
+  flex: 1;
+}
+
+.list-item__icon,
+.list-item__radio {
+  flex: 0 0 24px;
+}
+
+.list-item__icon {
+  fill: currentColor;
+}
+
+/* input растягивается на весь элемент */
+.list-item .e-radio__box {
+  position: static;
+  margin: 0;
+}
