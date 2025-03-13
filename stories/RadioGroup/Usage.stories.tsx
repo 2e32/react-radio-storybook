@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import RadioGroup, { type RenderIconProps } from '@2e32/react-radio-group';
-//import '@2e32/react-radio-group/css';
+import { RadioGroup } from '@2e32/react-radio';
+//import '@2e32/react-radio/css';
 
 import { AlignmentRadio, BorderedRadio, Checked, Group, Segmented, Tabs } from './components';
 

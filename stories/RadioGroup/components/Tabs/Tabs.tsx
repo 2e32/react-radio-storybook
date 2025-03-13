@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import cn from 'classnames';
 
-import RadioGroup, { type RadioGroupProps } from '@2e32/react-radio-group';
+import { RadioGroup } from '@2e32/react-radio';
 
 import './styles.css';
 

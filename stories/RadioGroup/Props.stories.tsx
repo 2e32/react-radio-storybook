@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-//import Radio, { type RenderIconProps } from '@2e32/react-radio-group';
-//import '@2e32/react-radio-group/css';
-
-import RadioGroup from '../../RadioGroup';
+import { RadioGroup } from '@2e32/react-radio';
+import '@2e32/react-radio/css';
 
 import * as options from './options';
-
 import type { Fruit } from './types';
 import {
   renderLangOption,
@@ -26,10 +23,6 @@ const meta: Meta<typeof RadioGroup> = {
 export default meta;
 
 type Story = StoryObj<typeof RadioGroup>;
-
-// value + checked
-// value + checkedValue + isValueChecked
-// value + name
 
 const RefStory = () => {
   const ref = useRef<HTMLDivElement>(null);
