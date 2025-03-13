@@ -1,0 +1,15 @@
+.checked__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.checked__item__box {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+}
+
+.checked__item__input {
+  display: none;
+}

@@ -1,0 +1,50 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  --selected-color: #0070f2;
+  --border-width: 1px;
+}
+
+/* Нижняя граница табов */
+.tabs::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom: var(--border-width) solid #e0e0e0;
+}
+
+.tabs__item {
+  flex: 1;
+  padding: 12px;
+  color: #808080;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabs__item--checked {
+  color: var(--selected-color);
+  border-bottom: var(--border-width) solid var(--selected-color);
+  box-sizing: border-box;
+  z-index: 1; /* Граница-индикатор поверх границы табов */
+}
+
+.tabs__input {
+  display: none;
+}
+
+/* Фон-индикатор, который показывает выбранный таб */
+.tabs__indicator {
+  position: absolute;
+  z-index: -1; /* Индикатор за табом, чтобы не блокировать взаимодействие с ним */
+  width: calc(100% / var(--tabs-count));
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tabs__item--checked ~ .tabs__indicator {
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: translateX(calc(var(--offset) * 100%));
+}
