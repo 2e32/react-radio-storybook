@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import cn from 'classnames';
 
-import RadioGroup from '../../../../RadioGroup';
+import { RadioGroup } from '@2e32/react-radio';
 
 import { ReactComponent as AlignTop } from './format-vertical-align-top.svg';
 import { ReactComponent as AlignCenter } from './format-vertical-align-center.svg';
