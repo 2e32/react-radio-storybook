@@ -2,10 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Radio from '@2e32/react-radio';
-import '@2e32/react-radio/css';
+
+import { log } from '../utils';
 
 import type { NotificationType, INotification, NumOption } from './types';
-import { log, renderCheckboxIcon, renderPathogenIcon } from './utils';
+import { renderCheckboxIcon, renderPathogenIcon } from './utils';
 
 import './assets/css/props.css';
 
