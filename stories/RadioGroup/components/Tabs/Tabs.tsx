@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import cn from 'classnames';
 
-import { RadioGroup } from '@2e32/react-radio';
+import Radio from '@2e32/react-radio';
 
 import './styles.css';
 
@@ -67,7 +67,7 @@ const Tabs = <V, O>({ options = [], onChange, ...rest }: RadioGroupProps<V, O>) 
     [onChange]
   );
 
-  return <RadioGroup {...rest} options={options} className="tabs" renderOption={renderOption} />;
+  return <Radio.Group {...rest} options={options} className="tabs" renderOption={renderOption} />;
 };
 
 export default Tabs;

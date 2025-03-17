@@ -1,4 +1,4 @@
-import { RadioGroup } from '@2e32/react-radio';
+import Radio, { RadioProps } from '@2e32/react-radio';
 
 import { Check } from '../../../assets/icons/svg';
 
@@ -7,11 +7,11 @@ import './styles.css';
 type YesNoRadioProps = Pick<RadioProps, 'value' | 'onChange'>;
 
 const Checked = ({ value, options, onChange }: YesNoRadioProps) => (
-  <RadioGroup
+  <Radio.Group
     value={value}
     options={options}
     className="yes-no-radio"
-    renderOption={({ option, optionProps }) => {
+    renderOption={({ option, optionProps }: { option: T; optionProps: { selected: boolean } }) => {
       const { selected } = optionProps;
 
       return (
@@ -21,10 +21,7 @@ const Checked = ({ value, options, onChange }: YesNoRadioProps) => (
             type="radio"
             checked={selected}
             className="checked__item__input"
-            // value={option}
-            // boxClassName="segmented-radio__box"
-            // renderIcon={() => null}
-            onChange={(e) => onChange(option, e)}
+            onChange={(e) => onChange?.(option, e)}
           />
           {option}
         </label>

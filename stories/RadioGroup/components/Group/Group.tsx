@@ -1,12 +1,12 @@
 import cn from 'classnames';
 
-import { RadioGroup } from '@2e32/react-radio';
+import Radio from '@2e32/react-radio';
 
 import './styles.css';
 
 const Group = ({ value, options, disabled = false, onChange, ...rest }: any) => {
   return (
-    <RadioGroup
+    <Radio.Group
       value={value}
       options={options}
       className="group-list"

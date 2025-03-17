@@ -1,12 +1,12 @@
 import cn from 'classnames';
 
-import { RadioGroup } from '@2e32/react-radio';
+import Radio from '@2e32/react-radio';
 
 import './styles.css';
 
 const Segmented = ({ value, options = [], onChange, ...rest }: any) => {
   return (
-    <RadioGroup
+    <Radio.Group
       value={value}
       options={options}
       className="segmented-list"

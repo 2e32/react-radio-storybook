@@ -1,4 +1,4 @@
-import { RadioGroup } from '@2e32/react-radio';
+import Radio, { RadioProps } from '@2e32/react-radio';
 
 import './styles.css';
 
@@ -8,7 +8,7 @@ type BorderedRadioProps = Omit<RadioProps, 'renderIcon'>;
 const renderIcon = () => <span className="bordered-radio" />;
 
 const BorderedRadio = (props: BorderedRadioProps) => (
-  <RadioGroup {...props} renderIcon={renderIcon} />
+  <Radio.Group {...props} renderIcon={renderIcon} />
 );
 
 export default BorderedRadio;

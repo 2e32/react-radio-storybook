@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import cn from 'classnames';
 
-import { RadioGroup } from '@2e32/react-radio';
+import Radio from '@2e32/react-radio';
 
 import { ReactComponent as AlignTop } from './format-vertical-align-top.svg';
 import { ReactComponent as AlignCenter } from './format-vertical-align-center.svg';
@@ -57,7 +57,7 @@ const AlignmentRadio = ({ value, onChange, ...rest }: any) => {
   );
 
   return (
-    <RadioGroup
+    <Radio.Group
       value={value}
       options={options}
       className="alignment-list"
