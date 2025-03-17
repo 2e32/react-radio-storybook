@@ -1,20 +1,14 @@
 import { useCallback } from 'react';
 import cn from 'classnames';
 
-import Radio from '@2e32/react-radio';
+import Radio, { type RadioGroupProps, type RenderOptionProps } from '@2e32/react-radio';
 
 import './styles.css';
 
-interface TabsProps extends RadioGroupProps<V, O> {
-  // value: T;
-  // options: T[];
-  // disabled?: boolean;
-  // onChange?: (option: string, event: React.ChangeEvent<HTMLInputElement>) => void;
-  // [key: string]: any;
-}
+type TabsProps = Pick<RadioGroupProps<string, string>, 'value' | 'options' | 'onChange'>;
 
 interface TabProps {
-  option: React.ReactNode;
+  option: string;
   selected: boolean;
   onChange?: (option: string, event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -50,9 +44,9 @@ const BgIndicator = ({ tabsCount, activeIndex }: BgIndicatorProps) => (
   />
 );
 
-const Tabs = <V, O>({ options = [], onChange, ...rest }: RadioGroupProps<V, O>) => {
+const Tabs = ({ onChange, ...rest }: TabsProps) => {
   const renderOption = useCallback(
-    ({ option, optionProps, extraProps }: RadioGroupProps<V, O>) => {
+    ({ option, optionProps, extraProps }: RenderOptionProps<string>) => {
       const { key, selected } = optionProps;
       const { isLastIndex, selectedIndex, optionsCount } = extraProps;
 
@@ -67,7 +61,7 @@ const Tabs = <V, O>({ options = [], onChange, ...rest }: RadioGroupProps<V, O>) 
     [onChange]
   );
 
-  return <Radio.Group {...rest} options={options} className="tabs" renderOption={renderOption} />;
+  return <Radio.Group {...rest} className="tabs" renderOption={renderOption} />;
 };
 
 export default Tabs;
