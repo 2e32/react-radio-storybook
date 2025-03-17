@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import cn from 'classnames';
 
-import Radio from '@2e32/react-radio';
+import Radio, { type RenderOptionProps } from '@2e32/react-radio';
 
 import { ReactComponent as AlignTop } from './format-vertical-align-top.svg';
 import { ReactComponent as AlignCenter } from './format-vertical-align-center.svg';
@@ -18,19 +18,19 @@ interface AlignmentOption {
   >;
 }
 
-const options = [
+const options: AlignmentOption[] = [
   { value: 'top', icon: AlignTop },
   { value: 'center', icon: AlignCenter },
   { value: 'bottom', icon: AlignBottom },
 ];
 
 const optionKey = (option: AlignmentOption) => option.value;
-const compareValueAndOption = (currValue: string | undefined, option: AlignmentOption) =>
+const compareValueAndOption = (currValue: string | null | undefined, option: AlignmentOption) =>
   currValue === option.value;
 
 const AlignmentRadio = ({ value, onChange, ...rest }: any) => {
   const renderOption = useCallback(
-    ({ option, optionProps }) => {
+    ({ option, optionProps }: RenderOptionProps<AlignmentOption>) => {
       const { value, icon: Icon } = option;
       const { key, selected, disabled } = optionProps;
 
