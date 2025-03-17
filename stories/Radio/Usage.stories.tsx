@@ -15,7 +15,7 @@ import {
   OutlinedRadioGroup,
   TiledRadio,
 } from './components';
-import * as Icon from './assets/icons/svg';
+import * as Icon from '../assets/icons/svg';
 
 import './assets/css/usage.css';
 
