@@ -1,17 +1,15 @@
-import Radio, { RadioProps } from '@2e32/react-radio';
+import { useCallback } from 'react';
+import Radio, { type RadioGroupProps, type RenderOptionProps } from '@2e32/react-radio';
 
 import { Check } from '../../../assets/icons/svg';
 
 import './styles.css';
 
-type YesNoRadioProps = Pick<RadioProps, 'value' | 'onChange'>;
+type CheckedProps = Pick<RadioGroupProps<string, string>, 'value' | 'options' | 'onChange'>;
 
-const Checked = ({ value, options, onChange }: YesNoRadioProps) => (
-  <Radio.Group
-    value={value}
-    options={options}
-    className="yes-no-radio"
-    renderOption={({ option, optionProps }: { option: T; optionProps: { selected: boolean } }) => {
+const Checked = ({ value, options, onChange }: CheckedProps) => {
+  const renderOption = useCallback(
+    ({ option, optionProps }: RenderOptionProps<string>) => {
       const { selected } = optionProps;
 
       return (
@@ -26,8 +24,18 @@ const Checked = ({ value, options, onChange }: YesNoRadioProps) => (
           {option}
         </label>
       );
-    }}
-  />
-);
+    },
+    [onChange]
+  );
+
+  return (
+    <Radio.Group
+      value={value}
+      options={options}
+      className="yes-no-radio"
+      renderOption={renderOption}
+    />
+  );
+};
 
 export default Checked;
