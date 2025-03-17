@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { RadioGroup } from '@2e32/react-radio';
-import '@2e32/react-radio/css';
+import Radio, { type RenderIconProps } from '@2e32/react-radio';
 
 import * as options from './options';
-import type { Fruit } from './types';
+import type { Fruit, Currency } from './types';
 import {
   renderLangOption,
   renderSubjectOption,
@@ -15,14 +14,14 @@ import {
 
 import * as Icon from '../assets/icons/svg';
 
-const meta: Meta<typeof RadioGroup> = {
+const meta: Meta<typeof Radio.Group> = {
   title: 'Example/RadioGroup/props',
-  component: RadioGroup,
+  component: Radio.Group,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof RadioGroup>;
+type Story = StoryObj<typeof Radio.Group>;
 
 const RefStory = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -31,7 +30,7 @@ const RefStory = () => {
     alert(`RadioGroup text: "${ref.current?.textContent}"`);
   }, []);
 
-  return <RadioGroup ref={ref} options={options.cities} />;
+  return <Radio.Group ref={ref} options={options.cities} />;
 };
 
 export const Ref: Story = {
@@ -46,23 +45,23 @@ export const Value: Story = {
       <p>
         <code>value</code> - отсутствует (nullable).
       </p>
-      <RadioGroup value={null} options={options.cities} />
-      <RadioGroup value={undefined} options={options.cities} />
+      <Radio.Group value={null} options={options.cities} />
+      <Radio.Group value={undefined} options={options.cities} />
 
       <p>
         <code>value</code> - строка.
       </p>
-      <RadioGroup value="Paris" options={options.cities} />
+      <Radio.Group value="Paris" options={options.cities} />
 
       <p>
         <code>value</code> - число.
       </p>
-      <RadioGroup value={10} options={options.itemsPerPage} />
+      <Radio.Group value={10} options={options.itemsPerPage} />
 
       <p>
         <code>value</code> - объект.
       </p>
-      <RadioGroup
+      <Radio.Group
         value={{ bookId: 5, title: 'Don Quixote', year: 1605, authorId: 4 }}
         options={options.books}
         isValueEqualOption={(value, option) => value?.bookId === option.bookId}
@@ -89,22 +88,22 @@ export const Options: Story = {
       <p>
         <code>options</code> - массив строк.
       </p>
-      <RadioGroup options={options.cities} />
+      <Radio.Group options={options.cities} />
 
       <p>
         <code>options</code> - массив чисел.
       </p>
-      <RadioGroup options={options.itemsPerPage} />
+      <Radio.Group options={options.itemsPerPage} />
 
       <p>
         <code>options</code> - массив объектов.
       </p>
-      <RadioGroup options={options.countries} optionContent="text" />
+      <Radio.Group options={options.countries} optionContent="text" />
 
       <p>
         <code>options</code> - массив объектов.
       </p>
-      <RadioGroup options={options.countries} optionContent={({ value }) => value} />
+      <Radio.Group options={options.countries} optionContent={({ value }) => value} />
     </>
   ),
 };
@@ -117,24 +116,24 @@ export const OptionKey: Story = {
         <code>optionKey</code> не указан. Т.к. ключ не указан и значение опции примитивное (строка
         или число), то оно используется в качестве ключа.
       </p>
-      <RadioGroup options={options.cities} />
+      <Radio.Group options={options.cities} />
 
       <p>
         <code>optionKey</code> не указан. Т.к. ключ не указан и значение опции - это объект, то
         индекс опции в списке используется в качестве ключа.
       </p>
-      <RadioGroup options={options.songs} optionContent="song" />
+      <Radio.Group options={options.songs} optionContent="song" />
 
       <p>
         <code>optionKey</code> - строка, указывающая имя свойства в объекте, которое необходимо
         использовать в качестве ключа.
       </p>
-      <RadioGroup options={options.books} optionKey="bookId" optionContent="title" />
+      <Radio.Group options={options.books} optionKey="bookId" optionContent="title" />
 
       <p>
         <code>optionKey</code> - функция вычисления ключа.
       </p>
-      <RadioGroup options={options.pets} optionKey={(option, index) => `${option}${index}`} />
+      <Radio.Group options={options.pets} optionKey={(option, index) => `${option}${index}`} />
     </>
   ),
 };
@@ -146,19 +145,19 @@ export const OptionContent: Story = {
       <p>
         <code>optionContent</code> не указан. Отображается значение опции.
       </p>
-      <RadioGroup options={options.sizes} />
+      <Radio.Group options={options.sizes} />
 
       <p>
         <code>optionContent</code> - строка, указывающая имя свойства в объекте, которое необходимо
         отобразить.
       </p>
-      <RadioGroup options={options.fruits} optionContent="name" />
+      <Radio.Group options={options.fruits} optionContent="name" />
 
       <p>
         <code>optionContent</code> - функция отображения значения.
       </p>
-      <RadioGroup options={options.schoolSubjects} optionContent={renderSubjectOption} />
-      <RadioGroup options={options.colors} optionContent={renderColorOption} />
+      <Radio.Group options={options.schoolSubjects} optionContent={renderSubjectOption} />
+      <Radio.Group options={options.colors} optionContent={renderColorOption} />
     </>
   ),
 };
@@ -166,7 +165,7 @@ export const OptionContent: Story = {
 export const OptionDisabled: Story = {
   name: 'optionDisabled',
   render: () => (
-    <RadioGroup
+    <Radio.Group
       options={options.programmingLanguages}
       optionContent={renderLangOption}
       optionDisabled={optionLangDisabled}
@@ -179,7 +178,7 @@ const IsValueEqualOptionStory = () => {
 
   return (
     <>
-      <RadioGroup
+      <Radio.Group
         value={currency}
         options={options.currencies}
         optionKey="code"
@@ -190,7 +189,7 @@ const IsValueEqualOptionStory = () => {
         }}
       />
 
-      <RadioGroup
+      <Radio.Group
         value={currency}
         options={options.currencies}
         optionKey="code"
@@ -209,22 +208,12 @@ export const IsValueEqualOption: Story = {
   name: 'isValueEqualOption',
   render: () => <IsValueEqualOptionStory />,
 };
-/*
-export const ClassName: Story = {
-  name: 'className',
-  args: { defaultValue: 'Red text', className: 'color-red' },
-};
-*/
+
 export const ClassName: Story = {
   name: 'className',
   args: { value: 'Firefox', options: options.browsers, className: 'color-red' },
 };
-/*
-export const Style: Story = {
-  name: 'style',
-  args: { style: { color: 'blue' }, defaultValue: 'Blue text' },
-};
-*/
+
 export const Style: Story = {
   name: 'style',
   args: { options: options.browsers, style: { color: 'red' } },
@@ -247,19 +236,19 @@ export const Disabled: Story = {
       <p>
         Select без <code>value</code>.
       </p>
-      <RadioGroup disabled />
+      <Radio.Group disabled />
       <p>
         Select с <code>placeholder</code>.
       </p>
-      <RadioGroup disabled />
+      <Radio.Group disabled />
       <p>
         Select с <code>value</code>.
       </p>
-      <RadioGroup value="Berlin" disabled />
+      <Radio.Group value="Berlin" disabled />
       <p>
         Select с <code>open</code>. Это свойство игнорируется и выпадающие опции скрыты.
       </p>
-      <RadioGroup value="Berlin" options={options.cities} disabled />
+      <Radio.Group value="Berlin" options={options.cities} disabled />
     </>
   ),
 };
@@ -271,19 +260,19 @@ export const ReadOnly: Story = {
       <p>
         Select без <code>value</code>.
       </p>
-      <RadioGroup readOnly />
+      <Radio.Group readOnly />
       <p>
         Select с <code>placeholder</code>.
       </p>
-      <RadioGroup readOnly />
+      <Radio.Group readOnly />
       <p>
         Select с <code>value</code>.
       </p>
-      <RadioGroup value="Berlin" readOnly />
+      <Radio.Group value="Berlin" readOnly />
       <p>
         Select с <code>open</code>. Это свойство игнорируется и выпадающие опции скрыты.
       </p>
-      <RadioGroup value="Berlin" options={options.cities} readOnly />
+      <Radio.Group value="Berlin" options={options.cities} readOnly />
     </>
   ),
 };
@@ -300,33 +289,25 @@ const getColor = (disabled: boolean, readOnly: boolean) => {
   return '#f24e23';
 };
 
-const renderSexIcon = ({ checked, disabled, readOnly }: RenderIconProps) => {
+const renderSexIcon = <T,>({ checked, disabled, readOnly }: RenderIconProps<T>) => {
   const CheckIcon = checked ? Icon.CheckboxMarked : Icon.CheckboxBlank;
 
   return <CheckIcon fill={getColor(disabled, readOnly)} />;
 };
-/*
-function capitalizeFirstLetter(string) {
-  return string.replace(/^./, string[0].toUpperCase());
-}
-*/
 
-const renderLangIcon = ({ value }: RenderIconProps) => {
-  let LangIcon;
-
-  if (value === 'js') LangIcon = Icon.LanguageJavascript;
-  if (value === 'ts') LangIcon = Icon.LanguageTypescript;
+const renderLangIcon = ({ value }: RenderIconProps<string>) => {
+  const LangIcon = value === 'js' ? Icon.LanguageJavascript : Icon.LanguageTypescript;
 
   // Используются стандартные цвета для checked/unchecked состояния
   return <LangIcon fill="currentColor" width="48" height="48" />;
 };
 
-const renderFoodIcon = ({ value, checked }: RenderIconProps) => {
+const renderFoodIcon = ({ value, checked }: RenderIconProps<string>) => {
   let FoodIcon;
 
   if (value === 'noodles') FoodIcon = Icon.Noodles;
-  if (value === 'rice') FoodIcon = Icon.Rice;
-  if (value === 'pasta') FoodIcon = Icon.Pasta;
+  else if (value === 'rice') FoodIcon = Icon.Rice;
+  else FoodIcon = Icon.Pasta;
 
   // Переопределение цвета для checked/unchecked состояния
   return <FoodIcon fill={checked ? '#455a64' : '#b0bec5'} width="48" height="48" />;
@@ -334,23 +315,21 @@ const renderFoodIcon = ({ value, checked }: RenderIconProps) => {
 
 const RenderIconStory = () => {
   const [sex, setSex] = useState<string>();
-  const [food, setFood] = useState<string>();
   const [lang, setLang] = useState<string>();
+  const [food, setFood] = useState<string>();
 
   return (
     <>
       <p>Sex</p>
-      <RadioGroup
+      <Radio.Group
         value={sex}
         options={['male', 'female']}
         renderIcon={renderSexIcon}
-        //optionContent={(str) => str.()}
-        // optionContent={(str) => <div style={{ textTransform: 'capitalize' }}>{str}</div>}
         onChange={setSex}
       />
 
       <p>Lang</p>
-      <RadioGroup
+      <Radio.Group
         value={lang}
         options={['js', 'ts']}
         renderIcon={renderLangIcon}
@@ -358,7 +337,7 @@ const RenderIconStory = () => {
       />
 
       <p>Food</p>
-      <RadioGroup
+      <Radio.Group
         value={food}
         options={['rice', 'noodles', 'pasta']}
         renderIcon={renderFoodIcon}
@@ -390,15 +369,15 @@ const OnChangeStory = () => {
   return (
     <>
       <p>Value: {str}</p>
-      <RadioGroup value={str} options={strOptions} onChange={setStr} />
+      <Radio.Group value={str} options={strOptions} onChange={setStr} />
       <p>Value: {num}</p>
-      <RadioGroup
+      <Radio.Group
         value={num}
         options={numOptions}
         onChange={(selectedNum) => setNum(selectedNum)}
       />
       <p>Value: {JSON.stringify(fruit)}</p>
-      <RadioGroup
+      <Radio.Group
         value={fruit}
         options={options.fruits}
         optionContent="name"

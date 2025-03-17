@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { RadioGroup } from '@2e32/react-radio';
+import Radio from '@2e32/react-radio';
+//import { RadioGroup } from '@2e32/react-radio';
 //import '@2e32/react-radio/css';
 
 import { AlignmentRadio, BorderedRadio, Checked, Group, Segmented, Tabs } from './components';
 
-const meta: Meta<typeof RadioGroup> = {
+const meta: Meta<typeof Radio.Group> = {
   title: 'Example/RadioGroup/usage',
-  component: RadioGroup,
+  component: Radio.Group,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof RadioGroup>;
+type Story = StoryObj<typeof Radio.Group>;
 
 const BorderedStory = () => {
   const [value, setValue] = useState<string>();
