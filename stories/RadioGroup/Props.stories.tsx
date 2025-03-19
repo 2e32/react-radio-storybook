@@ -75,7 +75,28 @@ export const Value: Story = {
 
 export const Label: Story = {
   name: 'label',
-  args: { label: 'Label', options: options.browsers },
+  render: () => (
+    <>
+      <p>
+        <code>label</code> как строка
+      </p>
+      <Radio.Group label="Label" options={['Radio 1', 'Radio 2']} />
+
+      <p>
+        <code>label</code> как React-элемент
+      </p>
+      <Radio.Group
+        label={
+          <>
+            <span>
+              Select your <b>web browser</b>
+            </span>
+          </>
+        }
+        options={options.browsers}
+      />
+    </>
+  ),
 };
 
 export const Hint: Story = {
