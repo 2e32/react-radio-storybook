@@ -139,11 +139,6 @@ export const Options: Story = {
         <code>options</code> - массив объектов.
       </p>
       <Radio.Group options={options.countries} optionContent="text" />
-
-      <p>
-        <code>options</code> - массив объектов.
-      </p>
-      <Radio.Group options={options.countries} optionContent={({ value }) => value} />
     </>
   ),
 };
