@@ -87,11 +87,9 @@ export const Label: Story = {
       </p>
       <Radio.Group
         label={
-          <>
-            <span>
-              Select your <b>web browser</b>
-            </span>
-          </>
+          <span>
+            Select your <b>web browser</b>
+          </span>
         }
         options={options.browsers}
       />
@@ -101,7 +99,26 @@ export const Label: Story = {
 
 export const Hint: Story = {
   name: 'hint',
-  args: { hint: 'Hint', options: options.browsers },
+  render: () => (
+    <>
+      <p>
+        <code>hint</code> как строка
+      </p>
+      <Radio.Group hint="Hint" options={['Radio 1', 'Radio 2']} />
+
+      <p>
+        <code>hint</code> как React-элемент
+      </p>
+      <Radio.Group
+        hint={
+          <span>
+            Select a <b>product size</b>
+          </span>
+        }
+        options={options.sizes}
+      />
+    </>
+  ),
 };
 
 export const Options: Story = {
