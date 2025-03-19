@@ -262,7 +262,7 @@ export const ClassName: Story = {
 
 export const Style: Story = {
   name: 'style',
-  args: { options: options.browsers, style: { color: 'red' } },
+  args: { value: 'Firefox', options: options.browsers, style: { color: 'blue' } },
 };
 
 export const LabelClassName: Story = {
