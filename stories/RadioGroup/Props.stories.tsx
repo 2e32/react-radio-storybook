@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Radio, { type RenderIconProps } from '@2e32/react-radio';
 
+import { log } from '../utils';
+
 import * as options from './options';
 import type { Fruit, Currency } from './types';
 import {
@@ -27,7 +29,7 @@ const RefStory = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    alert(`RadioGroup text: "${ref.current?.textContent}"`);
+    log(ref.current);
   }, []);
 
   return <Radio.Group ref={ref} options={options.cities} />;
