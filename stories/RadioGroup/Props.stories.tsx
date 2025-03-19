@@ -309,9 +309,20 @@ export const ReadOnly: Story = {
   ),
 };
 
+const loremIpsumText =
+  // eslint-disable-next-line max-len
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+
 export const Block: Story = {
   name: 'block',
   args: { block: true },
+  render: ({ block }) => (
+    <>
+      <span>{loremIpsumText}</span>
+      <Radio.Group options={options.cities} block={block} />
+      <span>{loremIpsumText}</span>
+    </>
+  ),
 };
 
 const getColor = (disabled: boolean, readOnly: boolean) => {
