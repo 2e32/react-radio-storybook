@@ -267,12 +267,12 @@ export const Style: Story = {
 
 export const LabelClassName: Story = {
   name: 'labelClassName',
-  args: { options: options.browsers, label: 'Label', labelClassName: 'color-red' },
+  args: { options: options.radios, label: 'Label', labelClassName: 'color-red' },
 };
 
 export const HintClassName: Story = {
   name: 'hintClassName',
-  args: { options: options.browsers, hint: 'Hint', hintClassName: 'color-red' },
+  args: { options: options.radios, hint: 'Hint', hintClassName: 'color-red' },
 };
 
 export const Disabled: Story = {
