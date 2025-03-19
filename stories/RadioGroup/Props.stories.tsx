@@ -297,19 +297,12 @@ export const ReadOnly: Story = {
   render: () => (
     <>
       <p>
-        Select без <code>value</code>.
+        Радиогруппа без <code>value</code>.
       </p>
-      <Radio.Group readOnly />
+      <Radio.Group options={options.cities} readOnly />
+
       <p>
-        Select с <code>placeholder</code>.
-      </p>
-      <Radio.Group readOnly />
-      <p>
-        Select с <code>value</code>.
-      </p>
-      <Radio.Group value="Berlin" readOnly />
-      <p>
-        Select с <code>open</code>. Это свойство игнорируется и выпадающие опции скрыты.
+        Радиогруппа с <code>value</code>.
       </p>
       <Radio.Group value="Berlin" options={options.cities} readOnly />
     </>
