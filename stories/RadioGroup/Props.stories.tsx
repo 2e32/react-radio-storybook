@@ -214,6 +214,11 @@ const IsValueEqualOptionStory = () => {
 
   return (
     <>
+      <p>
+        Без <code>isValueEqualOption</code>. Радиогруппа корректно отображает выбранное значение,
+        только если значение и опция имеют одинаковую ссылку (по умолчанию используется сравнение по
+        ссылке).
+      </p>
       <Radio.Group
         value={currency}
         options={options.currencies}
@@ -225,6 +230,11 @@ const IsValueEqualOptionStory = () => {
         }}
       />
 
+      <p>
+        С <code>isValueEqualOption</code>. Радиогруппа всегда корректно отображает выбранное
+        значение, т.к. функция обеспечивает сравнение ключей (идентификаторов) в виде примитивных
+        значений.
+      </p>
       <Radio.Group
         value={currency}
         options={options.currencies}
