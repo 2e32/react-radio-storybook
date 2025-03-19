@@ -53,18 +53,18 @@ export const Value: Story = {
       <p>
         <code>value</code> - строка.
       </p>
-      <Radio.Group value="Paris" options={options.cities} />
+      <Radio.Group value="London" options={options.cities} />
 
       <p>
         <code>value</code> - число.
       </p>
-      <Radio.Group value={10} options={options.itemsPerPage} />
+      <Radio.Group value={25} options={options.itemsPerPage} />
 
       <p>
         <code>value</code> - объект.
       </p>
       <Radio.Group
-        value={{ bookId: 5, title: 'Don Quixote', year: 1605, authorId: 4 }}
+        value={{ bookId: 3, authorId: 30, title: 'Crime and Punishment', year: 1866 }}
         options={options.books}
         isValueEqualOption={(value, option) => value?.bookId === option.bookId}
         optionContent="title"
