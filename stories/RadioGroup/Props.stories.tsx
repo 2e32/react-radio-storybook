@@ -280,19 +280,12 @@ export const Disabled: Story = {
   render: () => (
     <>
       <p>
-        Select без <code>value</code>.
+        Радиогруппа без <code>value</code>.
       </p>
-      <Radio.Group disabled />
+      <Radio.Group options={options.cities} disabled />
+
       <p>
-        Select с <code>placeholder</code>.
-      </p>
-      <Radio.Group disabled />
-      <p>
-        Select с <code>value</code>.
-      </p>
-      <Radio.Group value="Berlin" disabled />
-      <p>
-        Select с <code>open</code>. Это свойство игнорируется и выпадающие опции скрыты.
+        Радиогруппа с <code>value</code>.
       </p>
       <Radio.Group value="Berlin" options={options.cities} disabled />
     </>
