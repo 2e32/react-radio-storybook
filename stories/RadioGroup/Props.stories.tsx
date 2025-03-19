@@ -168,7 +168,7 @@ export const OptionKey: Story = {
       <p>
         <code>optionKey</code> - функция вычисления ключа.
       </p>
-      <Radio.Group options={options.pets} optionKey={(option, index) => `${option}${index}`} />
+      <Radio.Group options={options.pets} optionKey={(option, index) => `${index}-${option}`} />
     </>
   ),
 };
