@@ -1,5 +1,7 @@
 export const radios = ['Radio 1', 'Radio 2', 'Radio 3', 'Radio 4'];
 
+export const threeStringNumbers = ['One', 'Two', 'Three'];
+
 export const cities = ['Berlin', 'London', 'Paris', 'Rome'];
 
 export const metaVariables = ['foo', 'bar', 'baz', 'qux'];

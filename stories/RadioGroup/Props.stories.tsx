@@ -365,9 +365,6 @@ export const RenderIcon: Story = {
   render: () => <RenderIconStory />,
 };
 
-const strOptions = ['One', 'Two', 'Three'];
-const numOptions = [1, 2, 3];
-
 const isFruitSelected = (value: Fruit | null | undefined, option: Fruit) => value?.id === option.id;
 
 const OnChangeStory = () => {
@@ -382,13 +379,15 @@ const OnChangeStory = () => {
   return (
     <>
       <p>Value: {str}</p>
-      <Radio.Group value={str} options={strOptions} onChange={setStr} />
+      <Radio.Group value={str} options={options.threeStringNumbers} onChange={setStr} />
+
       <p>Value: {num}</p>
       <Radio.Group
         value={num}
-        options={numOptions}
+        options={options.threeNumbers}
         onChange={(selectedNum) => setNum(selectedNum)}
       />
+
       <p>Value: {JSON.stringify(fruit)}</p>
       <Radio.Group
         value={fruit}
