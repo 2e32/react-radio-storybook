@@ -22,6 +22,8 @@ export const browsers = ['Firefox', 'Google Chrome', 'Microsoft Edge', 'Safari',
 
 export const sizes = ['Small', 'Medium', 'Large'];
 
+export const memorySizes = ['64Gb', '128Gb', '256Gb'];
+
 export const frameworks = ['React', 'Angular', 'Vue', 'Svelte'];
 
 export const items = Array(100)
@@ -29,6 +31,8 @@ export const items = Array(100)
   .map((_, index) => `Item ${index}`);
 
 export const schoolSubjects = ['Algebra', 'Biology', 'Chemistry', 'Physics'];
+
+export const hobbies = ['Books', 'Movies', 'Music', 'Photo', 'Video Games'];
 
 export const womensNames = [
   'Abigail',

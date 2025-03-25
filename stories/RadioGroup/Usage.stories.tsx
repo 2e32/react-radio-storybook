@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Radio from '@2e32/react-radio';
-//import { RadioGroup } from '@2e32/react-radio';
-//import '@2e32/react-radio/css';
 
 import { AlignmentRadio, BorderedRadio, Checked, Group, Segmented, Tabs } from './components';
+import * as options from './options';
 
 const meta: Meta<typeof Radio.Group> = {
   title: 'Example/RadioGroup/usage',
@@ -19,7 +18,7 @@ type Story = StoryObj<typeof Radio.Group>;
 const BorderedStory = () => {
   const [value, setValue] = useState<string>();
 
-  return <BorderedRadio value={value} options={['64Gb', '128Gb', '256Gb']} onChange={setValue} />;
+  return <BorderedRadio value={value} options={options.memorySizes} onChange={setValue} />;
 };
 
 export const Bordered: Story = {
@@ -32,11 +31,7 @@ const CheckStory = () => {
   return (
     <>
       <p>Your favorite hobby</p>
-      <Checked
-        value={value}
-        options={['Books', 'Movies', 'Music', 'Photo', 'Video Games']}
-        onChange={setValue}
-      />
+      <Checked value={value} options={options.hobbies} onChange={setValue} />
     </>
   );
 };
@@ -48,13 +43,7 @@ export const Check: Story = {
 const GroupsStory = () => {
   const [value, setValue] = useState<string>();
 
-  return (
-    <Group
-      value={value}
-      options={['Radio 1', 'Radio 2', 'Radio 3', 'Radio X']}
-      onChange={setValue}
-    />
-  );
+  return <Group value={value} options={options.radios} onChange={setValue} />;
 };
 
 export const Groups: Story = {
@@ -64,7 +53,7 @@ export const Groups: Story = {
 const SegmentStory = () => {
   const [value, setValue] = useState<string>();
 
-  return <Segmented value={value} options={['Small', 'Medium', 'Large']} onChange={setValue} />;
+  return <Segmented value={value} options={options.sizes} onChange={setValue} />;
 };
 
 export const Segment: Story = {
@@ -91,7 +80,7 @@ const TabStory = () => {
 
   return (
     <>
-      <Tabs value={value} options={['One', 'Two', 'Three']} onChange={setValue} />
+      <Tabs value={value} options={options.threeStringNumbers} onChange={setValue} />
       {value === 'One' && <p>Tab One</p>}
       {value === 'Two' && <p>Tab Two</p>}
       {value === 'Three' && <p>Tab Three</p>}
