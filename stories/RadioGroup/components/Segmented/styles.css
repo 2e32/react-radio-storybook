@@ -7,9 +7,9 @@
   list-style: none;
 }
 
-/* Убираем отступы между кнопками */
+/* Уменьшаем отступы между кнопками */
 .segmented-list > .e-radio-group__content {
-  gap: 0;
+  gap: 4px;
 }
 
 .segmented-list__item {
