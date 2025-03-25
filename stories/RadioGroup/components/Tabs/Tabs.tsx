@@ -7,19 +7,17 @@ import type { TabsProps, TabProps, BgIndicatorProps } from './types';
 
 import './styles.css';
 
-const Tab = ({ option, selected = false, onChange }: TabProps) => {
-  return (
-    <label className={cn('tabs__item', { 'tabs__item--checked': selected })}>
-      {option}
-      <input
-        checked={selected}
-        type="radio"
-        className="tabs__input"
-        onChange={(e) => onChange?.(option, e)}
-      />
-    </label>
-  );
-};
+const Tab = ({ option, selected = false, onChange }: TabProps) => (
+  <label className={cn('tabs__item', { 'tabs__item--checked': selected })}>
+    {option}
+    <input
+      checked={selected}
+      type="radio"
+      className="tabs__input"
+      onChange={(e) => onChange?.(option, e)}
+    />
+  </label>
+);
 
 const BgIndicator = ({ tabsCount, activeIndex }: BgIndicatorProps) => (
   <span
@@ -50,7 +48,7 @@ const Tabs = ({ onChange, ...rest }: TabsProps) => {
     [onChange]
   );
 
-  return <Radio.Group {...rest} className="tabs" renderOption={renderOption} />;
+  return <Radio.Group {...rest} className="tabs" block renderOption={renderOption} />;
 };
 
 export default Tabs;

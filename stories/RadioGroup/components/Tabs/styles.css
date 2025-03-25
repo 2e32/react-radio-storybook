@@ -1,10 +1,13 @@
 .tabs {
-  display: flex;
-  flex-direction: row;
   position: relative;
 
   --selected-color: #0070f2;
   --border-width: 1px;
+}
+
+/* Убираем отступы между табами, чтобы не включать их в расчет ширины фона-индикатора */
+.tabs > .e-radio-group__content {
+  gap: 0;
 }
 
 /* Нижняя граница табов */
@@ -22,12 +25,12 @@
   color: #808080;
   text-align: center;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .tabs__item--checked {
   color: var(--selected-color);
   border-bottom: var(--border-width) solid var(--selected-color);
-  box-sizing: border-box;
   z-index: 1; /* Граница-индикатор поверх границы табов */
 }
 
