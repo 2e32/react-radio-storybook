@@ -1,17 +1,11 @@
 import { useCallback } from 'react';
 import cn from 'classnames';
 
-import Radio, { type RadioGroupProps, type RenderOptionProps } from '@2e32/react-radio';
+import Radio, { type RenderOptionProps } from '@2e32/react-radio';
+
+import type { TabsProps, TabProps, BgIndicatorProps } from './types';
 
 import './styles.css';
-
-type TabsProps = Pick<RadioGroupProps<string, string>, 'value' | 'options' | 'onChange'>;
-
-interface TabProps {
-  option: string;
-  selected: boolean;
-  onChange?: (option: string, event: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 const Tab = ({ option, selected = false, onChange }: TabProps) => {
   return (
@@ -26,11 +20,6 @@ const Tab = ({ option, selected = false, onChange }: TabProps) => {
     </label>
   );
 };
-
-interface BgIndicatorProps {
-  tabsCount: number;
-  activeIndex: number;
-}
 
 const BgIndicator = ({ tabsCount, activeIndex }: BgIndicatorProps) => (
   <span
