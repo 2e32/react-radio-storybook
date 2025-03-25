@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Radio, { type RenderIconProps } from '@2e32/react-radio';
+import Radio from '@2e32/react-radio';
 
 import { log } from '../utils';
 
@@ -12,9 +12,10 @@ import {
   renderSubjectOption,
   renderColorOption,
   optionLangDisabled,
+  renderLangIcon,
+  renderFoodIcon,
+  renderSexIcon,
 } from './utils';
-
-import * as Icon from '../assets/icons/svg';
 
 const meta: Meta<typeof Radio.Group> = {
   title: 'Example/RadioGroup/props',
@@ -323,37 +324,6 @@ export const Block: Story = {
       <span>{loremIpsumText}</span>
     </>
   ),
-};
-
-const getColor = (disabled: boolean, readOnly: boolean) => {
-  if (disabled) return '#bdbdbd';
-  if (readOnly) return '#ffab91';
-
-  return '#f24e23';
-};
-
-const renderSexIcon = <T,>({ checked, disabled, readOnly }: RenderIconProps<T>) => {
-  const CheckIcon = checked ? Icon.CheckboxMarked : Icon.CheckboxBlank;
-
-  return <CheckIcon fill={getColor(disabled, readOnly)} />;
-};
-
-const renderLangIcon = ({ value }: RenderIconProps<string>) => {
-  const LangIcon = value === 'js' ? Icon.LanguageJavascript : Icon.LanguageTypescript;
-
-  // Используются стандартные цвета для checked/unchecked состояния
-  return <LangIcon fill="currentColor" width="48" height="48" />;
-};
-
-const renderFoodIcon = ({ value, checked }: RenderIconProps<string>) => {
-  let FoodIcon;
-
-  if (value === 'noodles') FoodIcon = Icon.Noodles;
-  else if (value === 'rice') FoodIcon = Icon.Rice;
-  else FoodIcon = Icon.Pasta;
-
-  // Переопределение цвета для checked/unchecked состояния
-  return <FoodIcon fill={checked ? '#455a64' : '#b0bec5'} width="48" height="48" />;
 };
 
 const RenderIconStory = () => {
