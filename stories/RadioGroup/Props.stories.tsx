@@ -326,6 +326,16 @@ export const Block: Story = {
   ),
 };
 
+export const Vertical: Story = {
+  name: 'vertical',
+  args: {
+    label: 'City',
+    hint: 'Choose a city for the weekend',
+    options: options.cities,
+    vertical: true,
+  },
+};
+
 const RenderIconStory = () => {
   const [sex, setSex] = useState<string>();
   const [lang, setLang] = useState<string>();
