@@ -65,7 +65,7 @@ const AlignmentRadioStory = () => {
 
   return (
     <>
-      {JSON.stringify(value)}
+      <p>Value: {JSON.stringify(value)}</p>
       <AlignmentRadio value={value} onChange={setValue} />
     </>
   );

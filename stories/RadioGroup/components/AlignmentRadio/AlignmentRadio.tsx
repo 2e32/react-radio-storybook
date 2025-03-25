@@ -3,20 +3,14 @@ import cn from 'classnames';
 
 import Radio, { type RenderOptionProps } from '@2e32/react-radio';
 
+import type { AlignmentProps, AlignmentOption } from './types';
+import { optionKey, compareValueAndOption } from './utils';
+
 import { ReactComponent as AlignTop } from './format-vertical-align-top.svg';
 import { ReactComponent as AlignCenter } from './format-vertical-align-center.svg';
 import { ReactComponent as AlignBottom } from './format-vertical-align-bottom.svg';
 
 import './styles.css';
-
-interface AlignmentOption {
-  value: string;
-  icon: React.FunctionComponent<
-    React.SVGProps<SVGSVGElement> & {
-      title?: string;
-    }
-  >;
-}
 
 const options: AlignmentOption[] = [
   { value: 'top', icon: AlignTop },
@@ -24,11 +18,7 @@ const options: AlignmentOption[] = [
   { value: 'bottom', icon: AlignBottom },
 ];
 
-const optionKey = (option: AlignmentOption) => option.value;
-const compareValueAndOption = (currValue: string | null | undefined, option: AlignmentOption) =>
-  currValue === option.value;
-
-const AlignmentRadio = ({ value, onChange, ...rest }: any) => {
+const AlignmentRadio = ({ value, onChange }: AlignmentProps) => {
   const renderOption = useCallback(
     ({ option, optionProps }: RenderOptionProps<AlignmentOption>) => {
       const { value, icon: Icon } = option;
@@ -48,7 +38,7 @@ const AlignmentRadio = ({ value, onChange, ...rest }: any) => {
             value={value}
             disabled={disabled}
             className="alignment-list__input"
-            onChange={(e) => onChange(value, e)}
+            onChange={(e) => onChange?.(value, e)}
           />
         </label>
       );

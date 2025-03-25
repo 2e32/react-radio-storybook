@@ -1,9 +1,13 @@
 .alignment-list {
   padding: 6px;
-  box-sizing: border-box;
 
   --radius: 4px;
   --border-color: #e0e0e0;
+}
+
+/* Убираем отступы между кнопками */
+.alignment-list > .e-radio-group__content {
+  gap: 0;
 }
 
 .alignment-list__item {
@@ -12,6 +16,7 @@
   color: #757575;
   border: 1px solid var(--border-color);
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .alignment-list__item:first-child {
