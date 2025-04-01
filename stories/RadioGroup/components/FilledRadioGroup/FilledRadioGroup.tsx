@@ -5,7 +5,7 @@ import Radio, { type RadioGroupProps, type RenderOptionProps } from '@2e32/react
 
 import './styles.css';
 
-const Segmented = ({ value, options = [], onChange }: RadioGroupProps<string, string>) => {
+const FilledRadioGroup = ({ value, options = [], onChange }: RadioGroupProps<string, string>) => {
   const renderOption = useCallback(
     ({ option, optionProps }: RenderOptionProps<string>) => {
       const { selected } = optionProps;
@@ -40,4 +40,4 @@ const Segmented = ({ value, options = [], onChange }: RadioGroupProps<string, st
   );
 };
 
-export default Segmented;
+export default FilledRadioGroup;

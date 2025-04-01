@@ -7,8 +7,8 @@ import {
   AlignmentRadio,
   BorderedRadio,
   Checked,
+  FilledRadioGroup,
   OutlinedRadioGroup,
-  Segmented,
   Tabs,
 } from './components';
 import * as options from './options';
@@ -45,16 +45,6 @@ const CheckStory = () => {
 
 export const Check: Story = {
   render: () => <CheckStory />,
-};
-
-const SegmentStory = () => {
-  const [value, setValue] = useState<string>();
-
-  return <Segmented value={value} options={options.sizes} onChange={setValue} />;
-};
-
-export const Segment: Story = {
-  render: () => <SegmentStory />,
 };
 
 const AlignmentRadioStory = () => {
@@ -97,4 +87,14 @@ const OutlinedGroupStory = () => {
 
 export const OutlinedGroup: Story = {
   render: () => <OutlinedGroupStory />,
+};
+
+const FilledGroupStory = () => {
+  const [value, setValue] = useState<string>();
+
+  return <FilledRadioGroup value={value} options={options.sizes} onChange={setValue} />;
+};
+
+export const FilledGroup: Story = {
+  render: () => <FilledGroupStory />,
 };
