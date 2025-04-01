@@ -3,7 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Radio from '@2e32/react-radio';
 
-import { AlignmentRadio, BorderedRadio, Checked, Group, Segmented, Tabs } from './components';
+import {
+  AlignmentRadio,
+  BorderedRadio,
+  Checked,
+  OutlinedRadioGroup,
+  Segmented,
+  Tabs,
+} from './components';
 import * as options from './options';
 
 const meta: Meta<typeof Radio.Group> = {
@@ -38,16 +45,6 @@ const CheckStory = () => {
 
 export const Check: Story = {
   render: () => <CheckStory />,
-};
-
-const GroupsStory = () => {
-  const [value, setValue] = useState<string>();
-
-  return <Group value={value} options={options.radios} onChange={setValue} />;
-};
-
-export const Groups: Story = {
-  render: () => <GroupsStory />,
 };
 
 const SegmentStory = () => {
@@ -90,4 +87,14 @@ const TabStory = () => {
 
 export const Tab: Story = {
   render: () => <TabStory />,
+};
+
+const OutlinedGroupStory = () => {
+  const [value, setValue] = useState<string>();
+
+  return <OutlinedRadioGroup value={value} options={options.radios} onChange={setValue} />;
+};
+
+export const OutlinedGroup: Story = {
+  render: () => <OutlinedGroupStory />,
 };

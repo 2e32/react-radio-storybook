@@ -7,7 +7,7 @@ import './styles.css';
 
 type OutlinedRadioGroupProps = Omit<RadioGroupProps<string, string>, 'className' | 'renderIcon'>;
 
-const OutlinedRadioGroup = ({ value, options, onChange, ...rest }: OutlinedRadioGroupProps) => {
+const OutlinedRadioGroup = ({ onChange, ...rest }: OutlinedRadioGroupProps) => {
   const renderOption = useCallback(
     ({ option, optionProps }: RenderOptionProps<string>) => {
       const { selected } = optionProps;
