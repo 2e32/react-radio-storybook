@@ -5,7 +5,9 @@ import Radio, { type RadioGroupProps, type RenderOptionProps } from '@2e32/react
 
 import './styles.css';
 
-const OutlinedRadioGroup = ({ value, options, onChange }: RadioGroupProps<string, string>) => {
+type OutlinedRadioGroupProps = Omit<RadioGroupProps<string, string>, 'className' | 'renderIcon'>;
+
+const OutlinedRadioGroup = ({ value, options, onChange, ...rest }: OutlinedRadioGroupProps) => {
   const renderOption = useCallback(
     ({ option, optionProps }: RenderOptionProps<string>) => {
       const { selected } = optionProps;
@@ -30,14 +32,7 @@ const OutlinedRadioGroup = ({ value, options, onChange }: RadioGroupProps<string
     [onChange]
   );
 
-  return (
-    <Radio.Group
-      value={value}
-      options={options}
-      className="outlined-radio-group"
-      renderOption={renderOption}
-    />
-  );
+  return <Radio.Group {...rest} className="outlined-radio-group" renderOption={renderOption} />;
 };
 
 export default OutlinedRadioGroup;
