@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Radio from '@2e32/react-radio';
 
 import {
-  AlignmentRadio,
+  AlignmentRadioGroup,
   BorderedRadio,
   Checked,
   FilledRadioGroup,
@@ -47,19 +47,19 @@ export const Check: Story = {
   render: () => <CheckStory />,
 };
 
-const AlignmentRadioStory = () => {
+const AlignmentGroupStory = () => {
   const [value, setValue] = useState<string>();
 
   return (
     <>
       <p>Value: {JSON.stringify(value)}</p>
-      <AlignmentRadio value={value} onChange={setValue} />
+      <AlignmentRadioGroup value={value} onChange={setValue} />
     </>
   );
 };
 
 export const Alignment: Story = {
-  render: () => <AlignmentRadioStory />,
+  render: () => <AlignmentGroupStory />,
 };
 
 const TabStory = () => {

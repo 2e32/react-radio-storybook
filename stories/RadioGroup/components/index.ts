@@ -1,4 +1,4 @@
-export { default as AlignmentRadio } from './AlignmentRadio';
+export { default as AlignmentRadioGroup } from './AlignmentRadioGroup';
 export { default as BorderedRadio } from './BorderedRadio';
 export { default as Checked } from './Checked';
 export { default as FilledRadioGroup } from './FilledRadioGroup';

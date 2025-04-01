@@ -18,7 +18,7 @@ const options: AlignmentOption[] = [
   { value: 'bottom', icon: AlignBottom },
 ];
 
-const AlignmentRadio = ({ value, onChange }: AlignmentProps) => {
+const AlignmentRadioGroup = ({ value, onChange }: AlignmentProps) => {
   const renderOption = useCallback(
     ({ option, optionProps }: RenderOptionProps<AlignmentOption>) => {
       const { value, icon: Icon } = option;
@@ -58,4 +58,4 @@ const AlignmentRadio = ({ value, onChange }: AlignmentProps) => {
   );
 };
 
-export default AlignmentRadio;
+export default AlignmentRadioGroup;
