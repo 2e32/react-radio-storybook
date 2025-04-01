@@ -1,4 +1,4 @@
-.bordered-radio {
+.bordered-icon {
   --size: 20px;
 
   display: inline-flex;
@@ -15,30 +15,30 @@
   По этому стилизация hover, focus, active радиокнопки делается через псевдоклассы input
 */
 
-.e-radio__input:hover + .bordered-radio {
+.e-radio__input:hover + .bordered-icon {
   border-color: #999;
 }
 
-.e-radio__input:disabled + .bordered-radio {
+.e-radio__input:disabled + .bordered-icon {
   background-color: #ebebeb;
 }
 
-.e-radio__input:checked + .bordered-radio {
+.e-radio__input:checked + .bordered-icon {
   border-width: 6px;
 }
 
-.e-radio__input:enabled:checked + .bordered-radio {
+.e-radio__input:enabled:checked + .bordered-icon {
   border-color: #0060df;
 }
 
-.e-radio__input:enabled:checked:hover + .bordered-radio {
+.e-radio__input:enabled:checked:hover + .bordered-icon {
   border-color: #004fc4;
 }
 
-.e-radio__input:focus + .bordered-radio {
+.e-radio__input:focus + .bordered-icon {
   box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.e-radio__input:checked:focus + .bordered-radio {
+.e-radio__input:checked:focus + .bordered-icon {
   box-shadow: 0 0 1px 3px rgba(13, 110, 253, 0.25);
 }

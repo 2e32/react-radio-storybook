@@ -5,7 +5,7 @@ import './styles.css';
 type BorderedRadioGroupProps<V, O> = Omit<RadioGroupProps<V, O>, 'renderIcon'>;
 
 // Стилизация состояний радиокнопки происходит с помощью CSS (псевдоклассы input и комбинатор "+")
-const renderIcon = () => <span className="bordered-radio" />;
+const renderIcon = () => <span className="bordered-icon" />;
 
 const BorderedRadioGroup = <V, O>(props: BorderedRadioGroupProps<V, O>) => (
   <Radio.Group {...props} renderIcon={renderIcon} />
