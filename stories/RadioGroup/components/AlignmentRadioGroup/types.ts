@@ -2,7 +2,10 @@ import { type RadioGroupProps } from '@2e32/react-radio';
 
 import './styles.css';
 
-type AlignmentProps = Pick<RadioGroupProps<string, AlignmentOption>, 'value' | 'onChange'>;
+type AlignmentRadioGroupProps = Pick<
+  RadioGroupProps<string, AlignmentOption>,
+  'value' | 'onChange'
+>;
 
 interface AlignmentOption {
   value: string;
@@ -13,4 +16,4 @@ interface AlignmentOption {
   >;
 }
 
-export type { AlignmentProps, AlignmentOption };
+export type { AlignmentRadioGroupProps, AlignmentOption };

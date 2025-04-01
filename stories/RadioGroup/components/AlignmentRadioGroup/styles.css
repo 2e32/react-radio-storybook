@@ -1,16 +1,14 @@
-.alignment-list {
-  padding: 6px;
-
+.alignment-radio-group {
   --radius: 4px;
   --border-color: #e0e0e0;
 }
 
 /* Убираем отступы между кнопками */
-.alignment-list > .e-radio-group__content {
+.alignment-radio-group > .e-radio-group__content {
   gap: 0;
 }
 
-.alignment-list__item {
+.alignment-radio-group__item {
   display: inline-flex;
   padding: 12px;
   color: #757575;
@@ -19,25 +17,25 @@
   cursor: pointer;
 }
 
-.alignment-list__item:first-child {
+.alignment-radio-group__item:first-child {
   border-top-left-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
 }
 
-.alignment-list__item:last-child {
+.alignment-radio-group__item:last-child {
   border-top-right-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
 }
 
-.alignment-list__item:not(:first-child) {
+.alignment-radio-group__item:not(:first-child) {
   margin-left: -1px;
 }
 
-.alignment-list__item--checked {
+.alignment-radio-group__item--checked {
   color: #222;
   background-color: #ebebeb;
 }
 
-.alignment-list__input {
+.alignment-radio-group__input {
   display: none;
 }
