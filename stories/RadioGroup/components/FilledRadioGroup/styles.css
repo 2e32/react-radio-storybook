@@ -1,4 +1,4 @@
-.segmented-list {
+.filled-radio-group {
   display: inline-flex;
   gap: 6px;
   padding: 4px;
@@ -8,11 +8,11 @@
 }
 
 /* Уменьшаем отступы между кнопками */
-.segmented-list > .e-radio-group__content {
+.filled-radio-group > .e-radio-group__content {
   gap: 4px;
 }
 
-.segmented-list__item {
+.filled-radio-group__item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -25,20 +25,20 @@
   cursor: pointer;
 }
 
-.segmented-list__item:not(.segmented-list__item--checked):hover {
+.filled-radio-group__item:not(.filled-radio-group__item--checked):hover {
   color: #111;
 }
 
-.segmented-list__item:not(.segmented-list__item--checked):active {
+.filled-radio-group__item:not(.filled-radio-group__item--checked):active {
   background-color: #e3eaf2;
 }
 
-.segmented-list__item--checked {
+.filled-radio-group__item--checked {
   color: #111;
   background-color: #fff;
   box-shadow: 0 1px 3px rgb(0, 0, 0, 0.15);
 }
 
-.segmented-list__input {
+.filled-radio-group__input {
   display: none;
 }

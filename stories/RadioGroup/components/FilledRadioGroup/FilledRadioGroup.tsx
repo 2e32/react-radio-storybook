@@ -13,14 +13,14 @@ const FilledRadioGroup = ({ value, options = [], onChange }: RadioGroupProps<str
       return (
         <label
           key={option}
-          className={cn('segmented-list__item', {
-            'segmented-list__item--checked': selected,
+          className={cn('filled-radio-group__item', {
+            'filled-radio-group__item--checked': selected,
           })}
         >
           <input
             type="radio"
             checked={selected}
-            className="segmented-list__input"
+            className="filled-radio-group__input"
             onChange={(e) => onChange?.(option, e)}
           />
           {option}
@@ -34,7 +34,7 @@ const FilledRadioGroup = ({ value, options = [], onChange }: RadioGroupProps<str
     <Radio.Group
       value={value}
       options={options}
-      className="segmented-list"
+      className="filled-radio-group"
       renderOption={renderOption}
     />
   );
