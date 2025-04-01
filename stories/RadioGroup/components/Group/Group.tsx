@@ -13,15 +13,15 @@ const Group = ({ value, options, onChange }: RadioGroupProps<string, string>) =>
       return (
         <label
           key={option}
-          className={cn('group-list__item', {
-            'group-list__item--checked': selected,
+          className={cn('outlined-radio-group__item', {
+            'outlined-radio-group__item--checked': selected,
           })}
         >
           {option}
           <input
             checked={selected}
             type="radio"
-            className="checked__item__input"
+            className="outlined-radio-group__input"
             onChange={(e) => onChange?.(option, e)}
           />
         </label>
@@ -34,7 +34,7 @@ const Group = ({ value, options, onChange }: RadioGroupProps<string, string>) =>
     <Radio.Group
       value={value}
       options={options}
-      className="group-list"
+      className="outlined-radio-group"
       renderOption={renderOption}
     />
   );
