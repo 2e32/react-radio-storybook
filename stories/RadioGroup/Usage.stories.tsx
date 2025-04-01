@@ -5,7 +5,7 @@ import Radio from '@2e32/react-radio';
 
 import {
   AlignmentRadioGroup,
-  BorderedRadio,
+  BorderedRadioGroup,
   Checked,
   FilledRadioGroup,
   OutlinedRadioGroup,
@@ -25,7 +25,7 @@ type Story = StoryObj<typeof Radio.Group>;
 const BorderedStory = () => {
   const [value, setValue] = useState<string>();
 
-  return <BorderedRadio value={value} options={options.memorySizes} onChange={setValue} />;
+  return <BorderedRadioGroup value={value} options={options.memorySizes} onChange={setValue} />;
 };
 
 export const Bordered: Story = {
