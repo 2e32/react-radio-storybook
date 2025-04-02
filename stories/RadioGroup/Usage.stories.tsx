@@ -32,7 +32,7 @@ export const Bordered: Story = {
   render: () => <BorderedStory />,
 };
 
-const CheckStory = () => {
+const CheckedStory = () => {
   const [value, setValue] = useState<string>();
 
   return (
@@ -43,8 +43,8 @@ const CheckStory = () => {
   );
 };
 
-export const Check: Story = {
-  render: () => <CheckStory />,
+export const Checked: Story = {
+  render: () => <CheckedStory />,
 };
 
 const AlignmentGroupStory = () => {
