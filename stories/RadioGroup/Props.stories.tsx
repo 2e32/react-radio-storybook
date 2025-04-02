@@ -17,6 +17,8 @@ import {
   renderSexIcon,
 } from './utils';
 
+import './assets/css/props.css';
+
 const meta: Meta<typeof Radio.Group> = {
   title: 'Example/RadioGroup/props',
   component: Radio.Group,
@@ -334,6 +336,31 @@ export const Vertical: Story = {
     options: options.cities,
     vertical: true,
   },
+};
+
+export const Required: Story = {
+  name: 'required',
+  args: { label: 'Required', options: options.cities, required: true },
+};
+
+export const AsteriskIcon: Story = {
+  name: 'asteriskIcon',
+  args: {
+    label: 'Label',
+    options: options.cities,
+    required: true,
+    asteriskIcon: <span className="tag-required">Required</span>,
+  },
+};
+
+export const AsteriskPosition: Story = {
+  name: 'asteriskPosition',
+  args: { label: 'Label', required: true, asteriskPosition: 'left' },
+};
+
+export const AsteriskClassName: Story = {
+  name: 'asteriskClassName',
+  args: { label: 'Label', required: true, asteriskClassName: 'color-blue' },
 };
 
 const RenderIconStory = () => {
