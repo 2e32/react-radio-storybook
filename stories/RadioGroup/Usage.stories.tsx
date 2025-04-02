@@ -32,6 +32,26 @@ export const Bordered: Story = {
   render: () => <BorderedStory />,
 };
 
+const OutlinedStory = () => {
+  const [value, setValue] = useState<string>();
+
+  return <OutlinedRadioGroup value={value} options={options.radios} onChange={setValue} />;
+};
+
+export const Outlined: Story = {
+  render: () => <OutlinedStory />,
+};
+
+const FilledStory = () => {
+  const [value, setValue] = useState<string>();
+
+  return <FilledRadioGroup value={value} options={options.sizes} onChange={setValue} />;
+};
+
+export const Filled: Story = {
+  render: () => <FilledStory />,
+};
+
 const CheckedStory = () => {
   const [value, setValue] = useState<string>();
 
@@ -77,24 +97,4 @@ const TabStory = () => {
 
 export const Tab: Story = {
   render: () => <TabStory />,
-};
-
-const OutlinedGroupStory = () => {
-  const [value, setValue] = useState<string>();
-
-  return <OutlinedRadioGroup value={value} options={options.radios} onChange={setValue} />;
-};
-
-export const OutlinedGroup: Story = {
-  render: () => <OutlinedGroupStory />,
-};
-
-const FilledGroupStory = () => {
-  const [value, setValue] = useState<string>();
-
-  return <FilledRadioGroup value={value} options={options.sizes} onChange={setValue} />;
-};
-
-export const FilledGroup: Story = {
-  render: () => <FilledGroupStory />,
 };
