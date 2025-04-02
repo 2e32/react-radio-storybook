@@ -201,6 +201,72 @@ export const OptionContent: Story = {
   ),
 };
 
+const OptionValueStory = () => {
+  const [framework, setFramework] = useState<string>();
+  const [fruit, setFruit] = useState<Fruit>();
+  const [sportGuid, setSportGuid] = useState<string>();
+  const [currencyCode, setCurrencyCode] = useState<string>();
+
+  return (
+    <>
+      <p>
+        <code>optionValue</code> не указан. При выборе опции возвращается сам элемент опции.
+      </p>
+      <p>Framework: {framework}</p>
+      <Radio.Group value={framework} options={options.frameworks} onChange={setFramework} />
+
+      <p>Fruit: {JSON.stringify(fruit)}</p>
+      <Radio.Group
+        value={fruit}
+        options={options.fruits}
+        optionKey="id"
+        optionContent="name"
+        isValueEqualOption={(value, option) => value?.id === option.id}
+        onChange={setFruit}
+      />
+
+      <p>
+        <code>optionValue</code> - строка, указывающая значение какого свойства объекта необходимо
+        возвращать при выборе опции.
+      </p>
+      <p>Sport: {sportGuid}</p>
+      <Radio.Group
+        value={sportGuid}
+        options={options.sportTypes}
+        optionKey="guid"
+        optionContent="name"
+        optionValue="guid"
+        isValueEqualOption={(selectedGuid: string | null | undefined, option) =>
+          selectedGuid === option.guid
+        }
+        onChange={setSportGuid}
+      />
+
+      <p>
+        <code>optionValue</code> - функция, указывающая значение, которое необходимо возвращать при
+        выборе опции.
+      </p>
+      <p>Currency: {currencyCode}</p>
+      <Radio.Group
+        value={currencyCode}
+        options={options.currencies}
+        optionKey="code"
+        optionContent="label"
+        optionValue={(option) => option.code}
+        isValueEqualOption={(selectedCode: string | null | undefined, option) =>
+          selectedCode === option.code
+        }
+        onChange={setCurrencyCode}
+      />
+    </>
+  );
+};
+
+export const OptionValue: Story = {
+  name: 'optionValue',
+  render: () => <OptionValueStory />,
+};
+
 export const OptionDisabled: Story = {
   name: 'optionDisabled',
   render: () => (
