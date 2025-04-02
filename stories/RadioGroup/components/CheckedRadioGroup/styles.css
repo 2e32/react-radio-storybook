@@ -1,15 +1,16 @@
-.checked__item {
+.checked-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  cursor: pointer;
 }
 
-.checked__item__box {
+.checked-item__icon {
   display: inline-flex;
   width: 24px;
   height: 24px;
 }
 
-.checked__item__input {
+.checked-item__input {
   display: none;
 }

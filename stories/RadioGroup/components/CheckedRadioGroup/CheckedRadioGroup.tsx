@@ -5,20 +5,23 @@ import { Check } from '../../../assets/icons/svg';
 
 import './styles.css';
 
-type CheckedProps = Pick<RadioGroupProps<string, string>, 'value' | 'options' | 'onChange'>;
+type CheckedRadioGroupProps = Pick<
+  RadioGroupProps<string, string>,
+  'value' | 'options' | 'onChange'
+>;
 
-const CheckedRadioGroup = ({ value, options, onChange }: CheckedProps) => {
+const CheckedRadioGroup = ({ onChange, ...rest }: CheckedRadioGroupProps) => {
   const renderOption = useCallback(
     ({ option, optionProps }: RenderOptionProps<string>) => {
       const { selected } = optionProps;
 
       return (
-        <label key={option} className="checked__item">
-          <span className="checked__item__box">{selected ? <Check fill="#1e88e5" /> : null}</span>
+        <label key={option} className="checked-item">
+          <span className="checked-item__icon">{selected ? <Check fill="#1e88e5" /> : null}</span>
           <input
-            type="radio"
             checked={selected}
-            className="checked__item__input"
+            type="radio"
+            className="checked-item__input"
             onChange={(e) => onChange?.(option, e)}
           />
           {option}
@@ -28,14 +31,7 @@ const CheckedRadioGroup = ({ value, options, onChange }: CheckedProps) => {
     [onChange]
   );
 
-  return (
-    <Radio.Group
-      value={value}
-      options={options}
-      className="yes-no-radio"
-      renderOption={renderOption}
-    />
-  );
+  return <Radio.Group {...rest} vertical renderOption={renderOption} />;
 };
 
 export default CheckedRadioGroup;
