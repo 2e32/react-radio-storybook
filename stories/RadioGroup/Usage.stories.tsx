@@ -6,7 +6,7 @@ import Radio from '@2e32/react-radio';
 import {
   AlignmentRadioGroup,
   BorderedRadioGroup,
-  Checked,
+  CheckedRadioGroup,
   FilledRadioGroup,
   OutlinedRadioGroup,
   Tabs,
@@ -38,7 +38,7 @@ const CheckStory = () => {
   return (
     <>
       <p>Your favorite hobby</p>
-      <Checked value={value} options={options.hobbies} onChange={setValue} />
+      <CheckedRadioGroup value={value} options={options.hobbies} onChange={setValue} />
     </>
   );
 };

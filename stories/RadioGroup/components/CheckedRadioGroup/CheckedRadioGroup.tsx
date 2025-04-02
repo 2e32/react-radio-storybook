@@ -7,7 +7,7 @@ import './styles.css';
 
 type CheckedProps = Pick<RadioGroupProps<string, string>, 'value' | 'options' | 'onChange'>;
 
-const Checked = ({ value, options, onChange }: CheckedProps) => {
+const CheckedRadioGroup = ({ value, options, onChange }: CheckedProps) => {
   const renderOption = useCallback(
     ({ option, optionProps }: RenderOptionProps<string>) => {
       const { selected } = optionProps;
@@ -38,4 +38,4 @@ const Checked = ({ value, options, onChange }: CheckedProps) => {
   );
 };
 
-export default Checked;
+export default CheckedRadioGroup;
