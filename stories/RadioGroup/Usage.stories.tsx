@@ -32,6 +32,21 @@ export const Bordered: Story = {
   render: () => <BorderedStory />,
 };
 
+export const Checked: Story = {
+  render: () => <CheckedStory />,
+};
+
+const AlignmentGroupStory = () => {
+  const [value, setValue] = useState<string>();
+
+  return (
+    <>
+      <p>Value: {JSON.stringify(value)}</p>
+      <AlignmentRadioGroup value={value} onChange={setValue} />
+    </>
+  );
+};
+
 const OutlinedStory = () => {
   const [value, setValue] = useState<string>();
 
@@ -59,21 +74,6 @@ const CheckedStory = () => {
     <>
       <p>Your favorite hobby</p>
       <CheckedRadioGroup value={value} options={options.hobbies} onChange={setValue} />
-    </>
-  );
-};
-
-export const Checked: Story = {
-  render: () => <CheckedStory />,
-};
-
-const AlignmentGroupStory = () => {
-  const [value, setValue] = useState<string>();
-
-  return (
-    <>
-      <p>Value: {JSON.stringify(value)}</p>
-      <AlignmentRadioGroup value={value} onChange={setValue} />
     </>
   );
 };
