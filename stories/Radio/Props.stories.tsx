@@ -16,6 +16,14 @@ const meta: Meta<typeof Radio> = {
   args: {
     children: 'Label',
   },
+  // Декоратор для исключения влияния стилей radio и radio-group друг на друга
+  decorators: [
+    (Story) => (
+      <div data-scope="radio-story">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
