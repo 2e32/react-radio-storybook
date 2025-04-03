@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+.color-red {
+  color: red;
+}
+
 .color-blue {
   color: blue;
 }
