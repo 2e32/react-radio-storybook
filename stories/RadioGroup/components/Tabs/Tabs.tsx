@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 
 import Radio, { type RenderOptionProps } from '@2e32/react-radio';
@@ -38,11 +38,11 @@ const Tabs = ({ onChange, ...rest }: TabsProps) => {
       const { isLastIndex, selectedIndex, optionsCount } = extraProps;
 
       return (
-        <>
-          <Tab key={key} option={option} selected={selected} onChange={onChange} />
+        <React.Fragment key={key}>
+          <Tab option={option} selected={selected} onChange={onChange} />
 
           {isLastIndex && <BgIndicator tabsCount={optionsCount} activeIndex={selectedIndex} />}
-        </>
+        </React.Fragment>
       );
     },
     [onChange]
