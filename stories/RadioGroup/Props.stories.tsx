@@ -195,7 +195,9 @@ export const OptionContent: Story = {
         <code>optionContent</code> - функция отображения значения.
       </p>
       <Radio.Group options={options.currencies} optionContent={(option) => option.code} />
+      <br />
       <Radio.Group options={options.schoolSubjects} optionContent={renderSubjectOption} />
+      <br />
       <Radio.Group options={options.colors} optionContent={renderColorOption} />
     </>
   ),
