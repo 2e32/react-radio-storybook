@@ -1,4 +1,4 @@
-import { Fruit, Color, Song, Sport, User, Language, Currency } from '../types';
+import { Fruit, Color, Song, Sport, Language, Currency } from '../types';
 
 export const fruits: Fruit[] = [
   { id: 1, name: 'Apple' },
@@ -7,35 +7,12 @@ export const fruits: Fruit[] = [
   { id: 4, name: 'Orange' },
 ];
 
-export const numbers = [
-  { value: 1, label: 'One' },
-  { value: 2, label: 'Two' },
-  { value: 3, label: 'Three' },
-  { value: 4, label: 'Four' },
-  { value: 5, label: 'Five' },
-];
-
 export const countries = [
   { value: 'DEU', text: 'Germany' },
   { value: 'FRA', text: 'France' },
   { value: 'ITA', text: 'Italy' },
   { value: 'ESP', text: 'Spain' },
   { value: 'GBR', text: 'United Kingdom' },
-];
-
-export const months = [
-  { value: '01', title: 'January' },
-  { value: '02', title: 'February' },
-  { value: '03', title: 'March' },
-  { value: '04', title: 'April' },
-  { value: '05', title: 'May' },
-  { value: '06', title: 'June' },
-  { value: '07', title: 'July' },
-  { value: '08', title: 'August' },
-  { value: '09', title: 'September' },
-  { value: '10', title: 'October' },
-  { value: '11', title: 'November' },
-  { value: '12', title: 'December' },
 ];
 
 export const currencies: Currency[] = [
@@ -90,25 +67,10 @@ export const books = [
   { bookId: 10, authorId: 5, title: 'The Hobbit', year: 1937 },
 ];
 
-export const users: User[] = [
-  { name: 'Richard', age: 54, email: 'richard@yahoo.com' },
-  { name: 'James', age: 31, email: 'james@gmail.com' },
-  { name: 'Bill', age: 42, email: 'bill@yandex.ru' },
-  { name: 'Mary', age: 25, email: 'mary@outlook.com' },
-];
-
 export const programmingLanguages: Language[] = [
   { name: 'C#', type: 'backend', year: 2000 },
   { name: 'Java', type: 'backend', year: 1995 },
   { name: 'Python', type: 'backend', year: 1991 },
   { name: 'JavaScript', type: 'frontend', year: 1995 },
   { name: 'TypeScript ', type: 'frontend', year: 2012 },
-];
-
-export const products = [
-  { productId: 1, name: 'Adjustable Race', productNumber: 'AR-5381' },
-  { productId: 2, name: 'Bearing Ball', productNumber: 'BA-8327' },
-  { productId: 3, name: 'BB Ball Bearing', productNumber: 'BE-2349' },
-  { productId: 316, name: 'Blade', productNumber: 'BL-2036' },
-  { productId: 317, name: 'LL Crankarm', productNumber: 'CA-5965' },
 ];

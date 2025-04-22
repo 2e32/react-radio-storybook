@@ -1,4 +1,4 @@
-import { Color, Language, User } from '../types';
+import { Color, Language } from '../types';
 
 export const renderSubjectOption = (option: string, index: number) => (
   <span>
@@ -11,5 +11,3 @@ export const renderColorOption = (option: Color) => (
 );
 
 export const renderLangOption = (option: Language) => `${option.name} (${option.type})`;
-
-export const renderUserOption = (option: User) => `${option.name} (${option.age})`;

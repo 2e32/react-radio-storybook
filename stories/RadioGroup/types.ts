@@ -21,12 +21,6 @@ export type Sport = {
   name: string;
 };
 
-export type User = {
-  name: string;
-  age: number;
-  email: string;
-};
-
 export type Language = {
   name: string;
   type: string;
