@@ -1,0 +1,41 @@
+.filled-radio-group {
+  padding: 4px;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+}
+
+/* Уменьшаем отступы между кнопками */
+.filled-radio-group > .e-radio-group__content {
+  gap: 4px;
+}
+
+.filled-radio-group__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  min-height: 36px;
+  padding: 0 12px;
+  color: #555;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filled-radio-group__item:not(.filled-radio-group__item--checked):hover {
+  color: #111;
+}
+
+.filled-radio-group__item:not(.filled-radio-group__item--checked):active {
+  background-color: #e3eaf2;
+}
+
+.filled-radio-group__item--checked {
+  color: #111;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgb(0, 0, 0, 0.15);
+}
+
+.filled-radio-group__input {
+  display: none;
+}

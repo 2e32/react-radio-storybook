@@ -1,6 +1,6 @@
 import type { RenderIconProps } from '@2e32/react-radio';
 
-import * as Icon from '../assets/icons/svg';
+import * as Icon from '../../assets/icons/svg';
 
 const getCheckboxColor = (disabled: boolean, readOnly: boolean) => {
   if (disabled) return '#bdbdbd';

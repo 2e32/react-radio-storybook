@@ -19,7 +19,3 @@ p {
 ul {
   margin: 0;
 }
-
-.e-radio:not(:last-child) {
-  margin-right: 16px;
-}

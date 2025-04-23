@@ -1,0 +1,53 @@
+.outlined-radio-group {
+  --selected: #0075ff;
+  --radius: 8px;
+  --width: 1px;
+}
+
+/* Уменьшаем отступы между кнопками */
+.outlined-radio-group > .e-radio-group__content {
+  gap: 0;
+}
+
+.outlined-radio-group__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 10px 20px;
+  border: var(--width) solid #d9d9d9;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Радиусы */
+
+.outlined-radio-group__item:first-child {
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.outlined-radio-group__item:last-child {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.outlined-radio-group__item:not(.group-list__item--checked):hover {
+  color: var(--selected);
+}
+
+.outlined-radio-group__item--checked {
+  color: var(--selected);
+  border-color: var(--selected);
+  /* Поднимаем элемент, чтобы он был выше чем правый сосед (для отображения правой границы) */
+  z-index: 1;
+}
+
+/* Смещаем каждый элемент влево (кроме первого), чтобы устранить двойные границы элементов */
+.outlined-radio-group__item:not(.outlined-radio-group__item:first-child) {
+  margin-left: calc(var(--width) * -1);
+}
+
+.outlined-radio-group__input {
+  display: none;
+}

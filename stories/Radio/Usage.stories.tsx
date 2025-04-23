@@ -15,13 +15,20 @@ import {
   OutlinedRadioGroup,
   TiledRadio,
 } from './components';
-import * as Icon from './assets/icons/svg';
+import * as Icon from '../assets/icons/svg';
 
 import './assets/css/usage.css';
 
 const meta = {
   title: 'Example/Radio/usage',
   component: Radio,
+  decorators: [
+    (Story) => (
+      <div data-scope="radio-story">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Radio>;
 
 export default meta;

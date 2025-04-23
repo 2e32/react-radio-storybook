@@ -1,6 +1,6 @@
 import Radio, { type RadioProps, type RenderIconProps } from '@2e32/react-radio';
 
-import { Check } from '../../assets/icons/svg';
+import { Check } from '../../../assets/icons/svg';
 
 import './styles.css';
 
